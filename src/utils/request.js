@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { useStorage } from '@vueuse/core'
+import { API_URL } from '@/utils/config'
 
 const https = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
+  baseURL: API_URL
 })
 
 // 添加攜帶 jwt token 的攔截器
