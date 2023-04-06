@@ -1,0 +1,41 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "files.insertFinalNewline": false,
+  "stylelint.autoFixOnSave": true,
+  "stylelint.useLocal": true,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue",
+    "sass",
+    "postcss"
+  ],
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "html",
+    "vue",
+    "javascript"
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.rulers": [
+      100,
+      120
+    ],
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "blueprint.templatesPath": [
+    ".vscode/blueprint-templates"
+  ],
+  "scss.lint.unknownAtRules": "ignore"
+}

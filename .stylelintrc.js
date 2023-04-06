@@ -14,11 +14,11 @@ module.exports = {
       customSyntax: 'postcss-scss'
     },
     {
-      files: ['**/*.(html|vue|js)'],
+      files: ['**/*.(html|vue)'],
       customSyntax: 'postcss-html'
     }
   ],
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.js'],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json','.github/**/*','.stylelintrc.js','.eslintrc.js'],
   rules: {
     indentation: 2,
     'selector-pseudo-element-no-unknown': [
@@ -40,6 +40,7 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': null,
     'selector-type-no-unknown': null,
     'block-opening-brace-space-before': 'always',
+    'block-no-empty': null,
     'at-rule-no-unknown': null,
     'no-duplicate-selectors': null,
     'property-no-unknown': null,
