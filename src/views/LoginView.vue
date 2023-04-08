@@ -13,3 +13,6 @@ export default {
     LoginView
   </main>
 </template>
+
+<style lang="scss">
+</style>

@@ -13,3 +13,6 @@ export default {
     DashboardView
   </main>
 </template>
+
+<style lang="scss">
+</style>
