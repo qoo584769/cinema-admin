@@ -1,11 +1,11 @@
-<script setup>
-import { onMounted } from 'vue'
-import axios from 'axios'
-
-onMounted(() => {
-  axios.get('123')
-  // console.log(a)
-})
+<script>
+export default {
+  props: {
+  },
+  setup (props, { attrs, slots, emit, expose }) {
+    return {}
+  }
+}
 </script>
 
 <template>
