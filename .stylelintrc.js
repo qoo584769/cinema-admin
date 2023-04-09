@@ -27,6 +27,7 @@ module.exports = {
         ignorePseudoElements: ['v-deep', ':deep']
       }
     ],
+    'no-invalid-position-at-import-rule': null,
     'at-rule-no-unknown':null,
     "scss/at-rule-no-unknown": null,
     'number-leading-zero': 'always',
