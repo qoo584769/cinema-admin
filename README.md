@@ -1,8 +1,8 @@
-####項目描述
+#### 項目描述
 電影院管理員後台
 - 上線網址 https://cinema-admin-hdmv.onrender.com
 
-####技術堆疊
+#### 技術堆疊
 - vue composition api(寫法風格)
 - vuex(狀態管理)
 - vue-router(前端路由)
@@ -16,7 +16,7 @@
 - cicd(github action && render.com)
 - 專案相關工具(husky && eslint && stylelint)
 
-####安裝指南
+#### 安裝指南
 - 終端機輸入 node -v 確認版本為(v16.15.1)
 - 終端機輸入 npm ci
 - 終端機輸入 npm run dev(使用 .env.development 的環境變數) 或是  npm run production(使用 .env.production 的環境變數) 
@@ -46,5 +46,5 @@
 #### GIT FLOW
 ![gitflow](https://user-images.githubusercontent.com/97425372/230756961-5a15e31a-3910-4503-9e92-ff4ad32264b8.png)
 
-####注意事項
-- 
+#### 注意事項
+- 存檔會自動 format 格式
