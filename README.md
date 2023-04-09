@@ -35,15 +35,16 @@
 - test(測試檔案)
 - utils(共用工具)
 - view(頁面)
-
 ```
+
 #### 教學文件
 - api 定義方式: https://medium.com/i-am-mike/%E4%BD%BF%E7%94%A8axios%E6%99%82%E4%BD%A0%E7%9A%84api%E9%83%BD%E6%80%8E%E9%BA%BC%E7%AE%A1%E7%90%86-557d88365619
 - cd https://render.com/docs/deploy-vue-js
 - ci https://ithelp.ithome.com.tw/articles/10262377
 - husky https://ithelp.ithome.com.tw/articles/10278411
-```
+
 #### GIT FLOW
+![gitflow](https://user-images.githubusercontent.com/97425372/230756961-5a15e31a-3910-4503-9e92-ff4ad32264b8.png)
 
 ####注意事項
 - 
