@@ -10,7 +10,7 @@ export default {
 
 <template>
   <main>
-    LoginView
+    Login
   </main>
 </template>
 
