@@ -1,20 +1,14 @@
-<script>
-export default {
-  props: {
-  },
-  setup (props, { attrs, slots, emit, expose }) {
-    return {}
-  }
-}
+<script setup>
+import { ref } from 'vue'
+
+const test = ref('aaa')
 </script>
 
 <template>
-  <div class="ExampleCMPT">
-    example
+  <div class="container mx-auto bg-slate-900">
+    {{ test }}
   </div>
 </template>
 
-<style>
-.ExampleCMPT{
-}
+<style scoped>
 </style>
