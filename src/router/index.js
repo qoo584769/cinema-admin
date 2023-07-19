@@ -3,7 +3,7 @@ import {
 } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import AdminView from '@/views/AdminView.vue'
-import DashboardView from '@/views/DashboardView.vue'
+import DashboardView from '@/views/DashboardView2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +22,11 @@ const router = createRouter({
           path: '',
           name: 'Dashboard',
           component: DashboardView
+        },
+        {
+          path: 'settings',
+          name: 'settings',
+          component: () => import('../components/ExampleCMPT.vue')
         }
       ]
     },
