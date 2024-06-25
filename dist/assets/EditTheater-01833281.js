@@ -1,0 +1,1 @@
+import{h as a,r as t,i as s,o as r,c}from"./index-0bcf8434.js";const _={__name:"EditTheater",setup(n){const e=a(),o=t();return s(()=>{console.log(e.params.id),o.value=e.params.id}),(u,i)=>(r(),c("div"))}};export{_ as default};

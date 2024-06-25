@@ -54,10 +54,10 @@
     "vitest": "^0.29.1"
   },
   "lint-staged": {
-    "*.{ts,js,vue}": [
+    "*.{ts}": [
       "npm run lint"
     ],
-    "*.{html,scss,css,vue}": [
+    "*.{html}": [
       "npm run lint:style"
     ]
   }

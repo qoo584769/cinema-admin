@@ -21,6 +21,10 @@ module.exports = {
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json','.github/**/*','.stylelintrc.js','.eslintrc.js'],
   rules: {
     indentation: 2,
+    "declaration-block-single-line-max-declarations": null,
+    "number-max-precision": null,
+    "custom-property-pattern": null,
+    "scss/operator-no-unspaced": null,
     'selector-pseudo-element-no-unknown': [
       true,
       {

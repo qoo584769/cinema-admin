@@ -1,0 +1,1 @@
+import{r as a,o as e,c as s,t as o}from"./index-0bcf8434.js";const c={class:"container mx-auto bg-slate-900"},p={__name:"ExampleCMPT",setup(r){const t=a("aaa");return(n,_)=>(e(),s("div",c,o(t.value),1))}};export{p as default};
