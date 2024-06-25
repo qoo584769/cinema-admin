@@ -9,7 +9,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    base: env.NODE_ENV === 'production' ? env.VITE_BASE : '/',
+    base: env.NODE_ENV === 'production' ? './' : '/',
     plugins: [vue()],
     resolve: {
       alias: {
