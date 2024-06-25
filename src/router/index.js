@@ -1,5 +1,5 @@
 import {
-  createRouter, createWebHistory
+  createRouter, createWebHashHistory
 } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import AdminView from '@/views/AdminView.vue'
@@ -7,7 +7,7 @@ import DashboardView from '@/views/DashboardView.vue'
 import MovieView from '@/views/MovieView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/login',
