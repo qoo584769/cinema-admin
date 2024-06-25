@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center items-center h-screen bg-gray-900">
-    <div class="w-1/3 border-2 border-yellow-500 rounded p-6">
-      <h2 class="text-2xl font-bold mb-4 text-yellow-500 text-center">
+  <div class="flex justify-center items-center h-screen bg-[#0f0f0f]">
+    <div class="w-1/3 border-2 border-[#E7C673] rounded p-6">
+      <h2 class="text-2xl font-bold mb-4 text-[#E7C673] text-center">
         後台登入
       </h2>
       <form @submit.prevent="login">
@@ -11,13 +11,13 @@
               id="floating_email"
               v-model="email"
               type="text"
-              class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-yellow-500 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-500 peer"
+              class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-[#E7C673] bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#E7C673] focus:outline-none focus:ring-0 focus:border-[#E7C673] peer"
               placeholder=" "
               required
             >
             <label
               for="floating_email"
-              class="absolute text-sm text-yellow-500 dark:text-yellow-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-yellow-500 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              class="absolute text-sm text-[#E7C673] dark:text-[#E7C673] duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-[#E7C673] peer-focus:dark:text-[#E7C673] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
             >Email</label>
           </div>
         </div>
@@ -28,13 +28,13 @@
               id="floating_password"
               v-model="password"
               type="password"
-              class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-yellow-500 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-500 peer"
+              class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-[#E7C673] bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#E7C673] focus:outline-none focus:ring-0 focus:border-[#E7C673] peer"
               placeholder=" "
               required
             >
             <label
               for="floating_password"
-              class="absolute text-sm text-yellow-500 dark:text-yellow-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-yellow-500 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+              class="absolute text-sm text-[#E7C673] dark:text-[#E7C673] duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-[#E7C673] peer-focus:dark:text-[#E7C673] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
             >密碼</label>
           </div>
         </div>
@@ -42,7 +42,8 @@
         <div class="flex justify-center">
           <button
             type="submit"
-            class="border-2 border-yellow-500 text-yellow-500 bg-gray-900 hover:bg-yellow-500 hover:text-gray-900 px-4 py-2 rounded"
+            class="border-2 border-[#E7C673] text-[#E7C673] bg-gray-900 hover:bg-[#E7C673] hover:text-gray-900 px-4 py-2 rounded"
+            @keyup.enter="login"
           >
             登入
           </button>
@@ -64,6 +65,8 @@ const password = ref('')
 const login = async () => {
   try {
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/login`, {
+      // email: 'admin@gmail.com',
+      // password: 'adminadmin'
       email: email.value,
       password: password.value
     })

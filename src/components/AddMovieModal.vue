@@ -1,188 +1,195 @@
 <template>
   <div
     v-if="showStatus"
-    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 z-10"
+    class="absolute inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 overflow-auto"
+    @click.stop="hide"
   >
-    <div class="bg-white p-4 rounded w-3/5 h-4/5 absolute overflow-auto">
-      <h2 class="text-xl font-bold mb-4">
+    <div
+      class="bg-white p-4 rounded w-full h-screen absolute overflow-auto"
+      @click.stop=""
+    >
+      <h2 class="text-xl font-bold mb-4 text-center text-slate-700">
         新增電影
       </h2>
 
       <form @submit.prevent="addMovie">
-        <div class="mb-4">
-          <label
-            for="name"
-            class="block mb-2"
-          >電影名稱</label>
-          <input
-            id="name"
-            v-model="newMovie.name"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="director"
-            class="block mb-2"
-          >導演</label>
-          <input
-            id="director"
-            v-model="newMovie.director"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="level"
-            class="block mb-2"
-          >分級</label>
-          <input
-            id="level"
-            v-model="newMovie.level"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="desc"
-            class="block mb-2"
-          >描述</label>
-          <textarea
-            id="desc"
-            v-model="newMovie.desc"
-            class="border p-2 w-full"
-            required
-          />
-        </div>
-        <div class="mb-4">
-          <label
-            for="time"
-            class="block mb-2"
-          >時長</label>
-          <input
-            id="time"
-            v-model="newMovie.time"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="imgs"
-            class="block mb-2"
-          >圖片</label>
-          <input
-            id="imgs"
-            v-model="newImg"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="actors"
-            class="block mb-2"
-          >演員</label>
-          <input
-            id="actors"
-            v-model="newActor"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="videos"
-            class="block mb-2"
-          >影片連結</label>
-          <input
-            id="videos"
-            v-model="newVideo"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="videoImg"
-            class="block mb-2"
-          >影片封面圖片</label>
-          <input
-            id="videoImg"
-            v-model="newMovie.videoImg"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="status"
-            class="block mb-2"
-          >狀態</label>
-          <input
-            id="status"
-            v-model="newMovie.status"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-        <div class="mb-4">
-          <label
-            for="releaseData"
-            class="block mb-2"
-          >上映日期</label>
-          <input
-            id="releaseData"
-            v-model="newMovie.releaseData"
-            type="text"
-            class="border p-2 w-full"
-            required
-          >
-        </div>
-
-        <div class="mb-4">
-          <div
-            v-for="(image, index) in newProduct.images"
-            :key="index"
-          >
-            <label :for="'image-' + index">圖片URL：{{ image.url }}</label>
+        <div class="flex flex-wrap text-slate-700">
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="name"
+              class="font-bold ml-1"
+            >電影名稱</label>
             <input
-              :id="'image-' + index"
-              type="file"
-              @change="handleImageUpload($event, index)"
+              id="name"
+              v-model="newMovie.name"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
             >
-            <img
-              v-if="image.url"
-              :src="image.url"
-              class=""
-            >
-            <button
-              type="button"
-              @click="removeImage(index)"
-            >
-              刪除
-            </button>
           </div>
-          <button
-            type="button"
-            @click="addImage"
-          >
-            新增圖片
-          </button>
-        </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="director"
+              class="font-bold ml-1"
+            >導演</label>
+            <input
+              id="director"
+              v-model="newMovie.director"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="level"
+              class="font-bold ml-1"
+            >分級</label>
+            <input
+              id="level"
+              v-model="newMovie.level"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
 
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="time"
+              class="font-bold ml-1"
+            >時長</label>
+            <input
+              id="time"
+              v-model="newMovie.time"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="imgs"
+              class="font-bold ml-1"
+            >圖片</label>
+            <input
+              id="imgs"
+              v-model="newImg"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="actors"
+              class="font-bold ml-1"
+            >演員</label>
+            <input
+              id="actors"
+              v-model="newActor"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="videos"
+              class="font-bold ml-1"
+            >影片連結</label>
+            <input
+              id="videos"
+              v-model="newVideo"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="videoImg"
+              class="font-bold ml-1"
+            >影片封面圖片</label>
+            <input
+              id="videoImg"
+              v-model="newMovie.videoImg"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="status"
+              class="font-bold ml-1"
+            >狀態</label>
+            <input
+              id="status"
+              v-model="newMovie.status"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-6/12">
+            <label
+              for="releaseData"
+              class="font-bold ml-1"
+            >上映日期</label>
+            <input
+              id="releaseData"
+              v-model="newMovie.releaseData"
+              type="text"
+              class="border p-2 my-2 rounded-lg"
+              required
+            >
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-12/12">
+            <label
+              for="desc"
+              class="font-bold ml-1"
+            >電影說明</label>
+            <textarea
+              id="desc"
+              v-model="newMovie.desc"
+              class="border p-2 my-2 rounded-lg"
+              required
+            />
+          </div>
+          <div class="w-full max-w-full px-3 sm:w-12/12">
+            <div
+              v-for="(image, index) in newProduct.images"
+              :key="index"
+            >
+              <label :for="'image-' + index">圖片URL：{{ image.url }}</label>
+              <input
+                :id="'image-' + index"
+                type="file"
+                @change="handleImageUpload($event, index)"
+              >
+              <img
+                v-if="image.url"
+                :src="image.url"
+                class=""
+              >
+              <button
+                type="button"
+                class="bg-blue-500 text-white px-4 py-2 rounded"
+                @click="addImage"
+              >
+                新增圖片
+              </button>
+              <button
+                type="button"
+                class="bg-red-500 text-white px-4 py-2 rounded ml-2"
+                @click="removeImage(index)"
+              >
+                刪除圖片
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="flex justify-end">
           <button
             type="submit"
@@ -300,3 +307,9 @@ const showStatus = computed(() => {
   return show.value
 })
 </script>
+
+<style scoped lang="scss">
+input, textarea {
+  margin-bottom: 24px;
+  width: 100%;
+}</style>
