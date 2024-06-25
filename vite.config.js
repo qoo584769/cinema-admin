@@ -9,7 +9,14 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    base: env.NODE_ENV === 'production' ? './' : '/',
+    base: env.NODE_ENV === 'production' ? env.VITE_BASE : '/',
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       additionalData: '@import "./src/assets/scss/element.scss";'
+    //     }
+    //   }
+    // },
     plugins: [vue()],
     resolve: {
       alias: {
