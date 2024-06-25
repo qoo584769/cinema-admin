@@ -3,11 +3,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // import { stores } from './stores'
 import router from './router'
-import globalDirectives from '@/directives'
-import globalErrorPlugin from '@/plugins/globalErrorPlugin'
+import globalDirectives from '../src/directives'
+import globalErrorPlugin from '../src/plugins/globalErrorPlugin'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import '@/assets/scss/main.scss'
+import '../src/assets/scss/main.scss'
 
 const app = createApp(App)
 
