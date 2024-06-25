@@ -3,7 +3,8 @@ import {
 } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import AdminView from '@/views/AdminView.vue'
-import DashboardView from '@/views/DashboardView2.vue'
+import DashboardView from '@/views/DashboardView.vue'
+import MovieView from '@/views/MovieView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,21 @@ const router = createRouter({
           path: '',
           name: 'Dashboard',
           component: DashboardView
+        },
+        {
+          path: 'Movies',
+          name: 'MovieView',
+          component: MovieView
+        },
+        {
+          path: 'AddNewMovie',
+          name: 'AddNewMovie',
+          component: () => import('../components/AddNewMovie.vue')
+        },
+        {
+          path: 'EditTheater/:id',
+          name: 'EditTheater',
+          component: () => import('../components/EditTheater.vue')
         },
         {
           path: 'settings',
